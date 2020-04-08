@@ -1,0 +1,21 @@
+{% extends 'calculator/index.html' %}
+{% block content%}
+
+<h1>Welcome to Calculator page</h1>
+<p>Enter the two numbers below and select the operation</p>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit" class="btn btn-info btn-sm" name="Addition">+</button>
+  <button type="submit" class="btn btn-info btn-sm" name="Subtraction">-</button>
+  <button type="submit" class="btn btn-info btn-sm" name="Multiplication">*</button>
+  <button type="submit" class="btn btn-info btn-sm" name="Division">/</button>
+  <br>
+
+</form>
+
+<h3>Result: {{ str_rep }} {{ result }}</h3>
+
+
+{% endblock %}
